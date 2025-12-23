@@ -1,5 +1,6 @@
 import type { IconMap, SocialLink, Site } from '@/types';
 
+// Site metadata
 export const SITE: Site = {
   title: 'Victor Griggi',
   description: 'Your description here.', // TODO: Add description
@@ -8,19 +9,26 @@ export const SITE: Site = {
   locale: 'pt-BR',
 };
 
-export const NAV_LINKS: SocialLink[] = [
-  { href: '#hero', label: 'Início' },
+// Navigation links
+interface NavLink extends SocialLink {
+  icon: string;
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { href: '#hero', label: 'Início', icon: 'lucide:home' },
   // { href: "#projects", label: "Projetos" },
-  { href: '#manifest', label: 'Manifesto' },
-  { href: '#pricing', label: 'Colaboração' },
+  { href: '#manifest', label: 'Manifesto', icon: 'lucide:book-open' },
+  { href: '#pricing', label: 'Colaboração', icon: 'lucide:handshake' },
 ];
 
+// Social links
 export const SOCIAL_LINKS: SocialLink[] = [
   { href: 'https://github.com/vctorgriggi', label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/victorgriggi/', label: 'LinkedIn' },
   { href: 'mailto:contato@victorgriggi.com', label: 'Email' },
 ];
 
+// Icon mapping for social links
 export const ICON_MAP: IconMap = {
   GitHub: 'lucide:github',
   LinkedIn: 'lucide:linkedin',

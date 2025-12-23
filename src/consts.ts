@@ -33,8 +33,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const ICON_MAP: IconMap = {
   GitHub: 'lucide:github',
   LinkedIn: 'lucide:linkedin',
-  Website: 'lucide:globe',
-  RSS: 'lucide:rss',
   Email: 'lucide:mail',
   Out: 'lucide:external-link',
 };

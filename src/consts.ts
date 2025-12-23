@@ -3,7 +3,8 @@ import type { IconMap, SocialLink, Site } from '@/types';
 // Site metadata
 export const SITE: Site = {
   title: 'Victor Griggi',
-  description: 'Your description here.', // TODO: Add description
+  description:
+    'Victor é um Desenvolvedor Frontend que constrói interfaces acessíveis e experiências digitais bem estruturadas, priorizando clareza, fluxo e manutenção.',
   href: 'https://victorgriggi.com',
   author: 'Victor',
   locale: 'pt-BR',

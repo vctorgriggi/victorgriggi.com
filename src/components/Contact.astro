@@ -1,0 +1,93 @@
+<section id="contact" class="w-full border-t border-[#ffffff10] py-12">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="shiny-sec mb-2 text-lg">Vamos Conversar</h2>
+    <h3 class="mb-6 text-4xl font-medium md:text-5xl">Contato</h3>
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div class="text-(--white-icon)">
+        <p class="mb-4">
+          Quer conversar sobre um projeto ou uma ideia? É só entrar em contato.
+        </p>
+        <span>Baseado em </span>
+        <span class="text-text">Brasil (MT)</span>
+      </div>
+
+      <div>
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/xkowbwgn"
+          method="POST"
+          class="flex flex-col gap-4"
+        >
+          <input
+            type="text"
+            name="from_name"
+            placeholder="Nome"
+            required
+            class="text-text focus:ring-primary rounded-lg border border-(--white-icon-tr) bg-(--input-bg) px-4 py-2 focus:ring-2 focus:outline-none"
+          />
+
+          <input
+            type="email"
+            name="reply_to"
+            placeholder="Endereço de Email"
+            required
+            class="text-text focus:ring-primary rounded-lg border border-(--white-icon-tr) bg-(--input-bg) px-4 py-2 focus:ring-2 focus:outline-none"
+          />
+
+          <textarea
+            name="message"
+            placeholder="Mensagem"
+            rows="6"
+            required
+            class="text-text focus:ring-primary resize-none rounded-lg border border-(--white-icon-tr) bg-(--input-bg) px-4 py-2 focus:ring-2 focus:outline-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            id="submit-button"
+            class="text-text rounded-lg border border-(--white-icon-tr) bg-(--white-icon-tr) px-4 py-2 opacity-60 transition-opacity hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Enviar Mensagem
+          </button>
+
+          <div id="form-message" class="mt-2 hidden text-sm text-green-400">
+            Mensagem enviada com sucesso. Retornarei em breve.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  const form = document.getElementById('contact-form');
+  const button = document.getElementById('submit-button');
+  const message = document.getElementById('form-message');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    button.disabled = true;
+    message.classList.add('hidden');
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        form.reset();
+        message.classList.remove('hidden');
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+    } catch (error) {
+      console.error(error);
+      button.disabled = false;
+      alert('Houve um problema ao enviar sua mensagem.');
+    }
+  });
+</script>

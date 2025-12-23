@@ -1,0 +1,21 @@
+---
+import Footer from '@/components/Footer.astro';
+import Head from '@/components/Head.astro';
+import Nav from '@/components/Nav.astro';
+import { SITE } from '@/consts';
+import '@/styles/global.css';
+---
+
+<!doctype html>
+<html class="bg-background text-text" lang={SITE.locale}>
+  <Head>
+    <slot name="head" />
+  </Head>
+  <body class="flex h-fit min-h-screen flex-col font-sans">
+    <Nav />
+    <main class="mx-auto flex grow flex-col px-9 sm:px-28 lg:px-20">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

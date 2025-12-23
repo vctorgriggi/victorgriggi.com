@@ -1,0 +1,78 @@
+---
+import { STACK_ICONS } from '@/icons/stack';
+
+interface TechSkill {
+  name: string;
+  icon: keyof typeof STACK_ICONS;
+}
+
+const SKILLS: TechSkill[] = [
+  { name: 'React', icon: 'React' },
+  { name: 'TypeScript', icon: 'TypeScript' },
+  { name: 'Next.js', icon: 'NextJS' },
+  { name: 'Astro', icon: 'Astro' },
+  { name: 'Node.js', icon: 'NodeJS' },
+  { name: 'NestJS', icon: 'NestJS' },
+  { name: 'PostgreSQL', icon: 'PostgreSQL' },
+  { name: 'MySQL', icon: 'MySQL' },
+];
+---
+
+<div class="relative overflow-x-hidden py-8">
+  <div
+    class="from-background pointer-events-none absolute inset-y-0 left-0 z-20 w-32 bg-linear-to-r to-transparent"
+  >
+  </div>
+
+  <div
+    class="from-background pointer-events-none absolute inset-y-0 right-0 z-20 w-32 bg-linear-to-l to-transparent"
+  >
+  </div>
+
+  <div class="animate-scroll flex w-max gap-12 md:gap-20" aria-hidden="true">
+    {
+      SKILLS.map((item) => (
+        <div class="group flex items-center gap-2">
+          <img
+            src={STACK_ICONS[item.icon].src}
+            alt={item.name}
+            class="h-7 w-auto object-contain opacity-60 transition-transform duration-300 group-hover:scale-110"
+            width="30"
+            height="30"
+            loading="lazy"
+          />
+          <span class="text-lg font-medium text-(--white-icon)">
+            {item.name}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 60s linear infinite;
+  }
+
+  @media (min-width: 768px) {
+    .animate-scroll {
+      animation-duration: 50s;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll {
+      animation: none;
+    }
+  }
+</style>

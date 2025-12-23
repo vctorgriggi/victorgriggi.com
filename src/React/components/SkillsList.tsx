@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Code, Smartphone, Palette, ChevronDown } from 'lucide-react';
 
 interface SkillCategory {
@@ -47,7 +47,7 @@ const SkillsList = () => {
 
   return (
     <div className="text-left">
-      <h3 className="text-text text-3xl font-semibold md:mb-6 md:text-4xl">
+      <h3 className="text-3xl font-semibold md:mb-6 md:text-4xl">
         O que eu faço?
       </h3>
 
@@ -60,18 +60,16 @@ const SkillsList = () => {
             <li key={label} className="w-full">
               <div
                 onClick={() => toggleItem(label)}
-                className="hover:bg-opacity-80 w-full cursor-pointer rounded-2xl border border-(--white-icon-tr) bg-[#1414149c] text-left transition-colors lg:w-3/4"
+                className="w-full cursor-pointer rounded-2xl border border-(--white-icon-tr) bg-[#1414149c] text-left lg:w-4/5"
               >
                 <div className="flex items-center gap-3 p-4">
-                  <Icon className="text-primary h-6 w-6 opacity-70" />
+                  <Icon className="text-primary h-6 w-6 opacity-60" />
 
-                  <div className="flex grow items-center justify-between gap-2">
-                    <span className="text-text block truncate text-lg">
-                      {label}
-                    </span>
+                  <div className="flex grow items-center justify-between">
+                    <span className="block truncate text-lg">{label}</span>
 
                     <ChevronDown
-                      className={`text-text h-6 w-6 shrink-0 transition-transform ${
+                      className={`h-6 w-6 shrink-0 transition-transform ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     />

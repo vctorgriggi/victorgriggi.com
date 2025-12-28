@@ -19,7 +19,19 @@ export const NAV_LINKS: NavLink[] = [
 
 // Social links
 export const SOCIAL_LINKS: SocialLink[] = [
-  { href: 'https://github.com/vctorgriggi', label: 'GitHub', icon: 'lucide:github' },
-  { href: 'https://www.linkedin.com/in/victorgriggi/', label: 'LinkedIn', icon: 'lucide:linkedin' },
-  { href: 'mailto:contato@victorgriggi.com', label: 'Email', icon: 'lucide:mail' },
+  {
+    href: 'https://github.com/vctorgriggi',
+    label: 'GitHub',
+    icon: 'lucide:github',
+  },
+  {
+    href: 'https://www.linkedin.com/in/victorgriggi/',
+    label: 'LinkedIn',
+    icon: 'lucide:linkedin',
+  },
+  {
+    href: 'mailto:contato@victorgriggi.com',
+    label: 'Email',
+    icon: 'lucide:mail',
+  },
 ];

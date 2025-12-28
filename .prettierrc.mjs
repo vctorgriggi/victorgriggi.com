@@ -5,8 +5,8 @@ export default {
   tabWidth: 2,
   plugins: [
     'prettier-plugin-astro',
-    'prettier-plugin-tailwindcss',
     'prettier-plugin-astro-organize-imports',
+    'prettier-plugin-tailwindcss',
   ],
   overrides: [
     {

@@ -66,7 +66,10 @@ export function initActiveSection(): void {
         document.querySelector(`nav a[href="#${id}"]`)?.classList.add('active');
       });
     },
-    { threshold: 0.6 },
+    {
+      threshold: 0,
+      rootMargin: '-50% 0px -50% 0px',
+    },
   );
 
   sections.forEach((section) => observer.observe(section));

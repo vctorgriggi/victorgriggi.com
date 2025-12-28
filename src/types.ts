@@ -18,10 +18,7 @@ export interface NavLink {
 export interface SocialLink {
   href: string;
   label: string;
-}
-
-export interface IconMap {
-  [key: string]: string;
+  icon: string;
 }
 
 // Tech Skills + Stack

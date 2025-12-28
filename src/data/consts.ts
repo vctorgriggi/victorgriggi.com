@@ -1,4 +1,4 @@
-import type { IconMap, NavLink, SocialLink, Site } from '@/types';
+import type { NavLink, SocialLink, Site } from '@/types';
 
 // Site metadata
 export const SITE: Site = {
@@ -19,15 +19,7 @@ export const NAV_LINKS: NavLink[] = [
 
 // Social links
 export const SOCIAL_LINKS: SocialLink[] = [
-  { href: 'https://github.com/vctorgriggi', label: 'GitHub' },
-  { href: 'https://www.linkedin.com/in/victorgriggi/', label: 'LinkedIn' },
-  { href: 'mailto:contato@victorgriggi.com', label: 'Email' },
+  { href: 'https://github.com/vctorgriggi', label: 'GitHub', icon: 'lucide:github' },
+  { href: 'https://www.linkedin.com/in/victorgriggi/', label: 'LinkedIn', icon: 'lucide:linkedin' },
+  { href: 'mailto:contato@victorgriggi.com', label: 'Email', icon: 'lucide:mail' },
 ];
-
-// Icon mapping for social links
-export const ICON_MAP: IconMap = {
-  GitHub: 'lucide:github',
-  LinkedIn: 'lucide:linkedin',
-  Email: 'lucide:mail',
-  Out: 'lucide:external-link',
-};

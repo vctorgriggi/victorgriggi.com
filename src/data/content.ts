@@ -1,5 +1,6 @@
 import type {
   ProcessStep,
+  Project,
   ProjectFormat,
   SkillCategory,
   StackItem,
@@ -46,6 +47,18 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       'Prototipação antes do desenvolvimento',
       'Organização de fluxos e navegação',
     ],
+  },
+];
+
+// Projects (usado no Projects.astro)
+export const PROJECTS: Project[] = [
+  {
+    title: 'Next Supabase Template',
+    description:
+      'Production-ready Next.js + Supabase starter with auth, profiles, file uploads, and end-to-end type safety. Opinionated architecture for maintainable apps.',
+    image: '/projects/next-supabase-template.png',
+    preview: 'https://next-supabase-template-zeta.vercel.app/',
+    repo: 'https://github.com/vctorgriggi/next-supabase-template',
   },
 ];
 

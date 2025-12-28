@@ -1,31 +1,8 @@
 ---
-import NextSupabaseTemplate from '@/../public/projects/next-supabase-template.png';
 import Link from '@/components/ui/Link.astro';
 import Section from '@/components/ui/Section.astro';
-import { ICON_MAP } from '@/data/consts';
+import { PROJECTS } from '@/data/content';
 import { Icon } from 'astro-icon/components';
-import { Image } from 'astro:assets';
-
-interface Project {
-  title: string;
-  description: string;
-  image: ImageMetadata;
-  preview: string;
-  repo?: string;
-}
-
-const PROJECTS: Project[] = [
-  {
-    title: 'Next Supabase Template',
-    description:
-      'Production-ready Next.js + Supabase starter with auth, profiles, file uploads, and end-to-end type safety. Opinionated architecture for maintainable apps.',
-    image: NextSupabaseTemplate,
-    preview: 'https://next-supabase-template-zeta.vercel.app/',
-    repo: 'https://github.com/vctorgriggi/next-supabase-template',
-  },
-];
-
-// --
 ---
 
 <Section id="projects" subtitle="Projetos" title="Destaques">
@@ -41,10 +18,11 @@ const PROJECTS: Project[] = [
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
+            <img
               src={item.image}
               alt={item.title}
               class="aspect-video w-full object-cover grayscale transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0"
+              loading="lazy"
             />
           </a>
 
@@ -65,7 +43,7 @@ const PROJECTS: Project[] = [
                   class="rounded-xl"
                   external
                 >
-                  <Icon name={ICON_MAP.GitHub} class="size-5" />
+                  <Icon name="lucide:github" class="size-5" />
                 </Link>
               )}
 
@@ -76,7 +54,7 @@ const PROJECTS: Project[] = [
                 class="rounded-xl"
                 external
               >
-                <Icon name={ICON_MAP.Out} class="size-5" />
+                <Icon name="lucide:external-link" class="size-5" />
               </Link>
             </div>
           </div>
@@ -94,7 +72,7 @@ const PROJECTS: Project[] = [
       external
     >
       Ver mais no GitHub
-      <Icon name={ICON_MAP.GitHub} class="size-4" />
+      <Icon name="lucide:github" class="size-4" />
     </Link>
   </div>
 </Section>

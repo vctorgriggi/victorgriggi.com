@@ -42,6 +42,14 @@ export interface StackItem {
 }
 
 // Projects + Process
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  preview: string;
+  repo?: string;
+}
+
 export interface ProjectFormat {
   name: string;
   description: string;

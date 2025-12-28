@@ -1,0 +1,67 @@
+---
+import SocialIcons from '@/components/ui/SocialIcons.astro';
+import { SOCIAL_LINKS } from '@/data/consts';
+import { FOOTER_STACK } from '@/data/content';
+import { STACK_ICONS } from '@/data/icons';
+import Container from '../ui/Container.astro';
+---
+
+<footer class="border-border-subtle border-t py-12">
+  <Container>
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10">
+        <div class="flex flex-col items-center lg:items-start">
+          <SocialIcons links={SOCIAL_LINKS} class="size-8" />
+        </div>
+
+        <div class="flex flex-col items-center space-y-6">
+          <div class="grid w-full max-w-xs grid-cols-1 gap-3 py-6">
+            {
+              FOOTER_STACK.map((item) => (
+                <div class="flex items-center justify-center gap-3 lg:justify-start">
+                  <span class="text-sm text-(--white-icon)">{item.label}</span>
+                  <img
+                    src={STACK_ICONS[item.icon].src}
+                    alt={`Ícone do ${item.name}`}
+                    aria-hidden="true"
+                    class="h-5 w-5 opacity-60"
+                  />
+                  <span class="text-sm text-(--white-icon)">{item.name}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center space-y-6 lg:items-start">
+          <div class="w-full max-w-xs">
+            <iframe
+              data-testid="embed-iframe"
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/playlist/7LP7s3rFEqbmi9frd1OKnp?utm_source=generator"
+              class="h-[152px] w-full"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-border-subtle mt-12 border-t pt-8">
+        <p class="space-y-2 text-center text-sm text-(--white-icon)">
+          <span class="block sm:inline">
+            &copy; {new Date().getFullYear()} Todos os direitos reservados. Desenvolvido
+            com 🤍 por <a
+              href="https://github.com/vctorgriggi"
+              aria-label="Github do Victor"
+              title="Github do Victor"
+              class="hover:text-text transition duration-300 ease-in-out"
+              target="_blank"
+              rel="noopener noreferrer">Victor</a
+            >!
+          </span>
+        </p>
+      </div>
+    </div>
+  </Container>
+</footer>

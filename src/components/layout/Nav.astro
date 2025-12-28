@@ -1,0 +1,167 @@
+---
+import { NAV_LINKS } from '@/data/consts';
+import { Icon } from 'astro-icon/components';
+---
+
+<nav
+  id="main-nav"
+  class="bg-background fixed bottom-0 left-1/2 z-100 w-[80%] -translate-x-1/2 border border-transparent backdrop-blur-xl transition-all duration-500 ease-in-out md:top-6 md:bottom-auto"
+>
+  <div class="container mx-auto p-3">
+    <ul
+      class="flex w-full justify-between gap-6 md:justify-center md:gap-12 md:space-x-6"
+    >
+      {
+        NAV_LINKS.map((item) => (
+          <li class="flex-1 md:flex-none">
+            <a
+              href={item.href}
+              aria-label={item.label}
+              title={item.label}
+              class="group relative flex flex-col items-center gap-1 text-xs text-(--white-icon) transition-colors md:text-base"
+            >
+              <span class="nav-indicator absolute top-1/2 -left-6 hidden h-2 w-2 -translate-y-1/2 scale-0 rounded-full bg-[#A9FF5B] opacity-0 transition-all duration-300 md:block" />
+              <Icon name={item.icon} class="size-6 md:hidden" />
+              <span class="hidden md:inline-block">{item.label}</span>
+              <span class="md:hidden">{item.label}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    background-color: var(--background);
+    border: 1px solid transparent;
+    transition:
+      background-color 0.3s ease,
+      border-radius 0.3s ease,
+      border-color 0.3s ease,
+      width 0.3s ease;
+  }
+
+  nav.scrolling {
+    background-color: transparent;
+    border-color: var(--border-subtle);
+    border-radius: 9999px;
+  }
+
+  nav a.active {
+    color: white !important;
+  }
+
+  .nav-indicator {
+    opacity: 0;
+    scale: 0;
+  }
+
+  @keyframes pulse-green {
+    0% {
+      box-shadow: 0 0 0 0 rgba(169, 255, 91, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 6px rgba(169, 255, 91, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(169, 255, 91, 0);
+    }
+  }
+
+  nav a.active .nav-indicator {
+    opacity: 1;
+    scale: 1;
+    animation: pulse-green 1.6s ease-out infinite;
+  }
+
+  @media (max-width: 767px) {
+    nav {
+      width: 100% !important;
+      border-radius: 1rem 1rem 0 0;
+      border-color: var(--border-subtle);
+    }
+
+    nav.scrolling {
+      background-color: transparent;
+      border-radius: 1rem 1rem 0 0;
+    }
+
+    body {
+      padding-bottom: 70px;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const maxScroll = 1000;
+  let rafId: number | null = null;
+
+  function updateNav() {
+    if (!nav) return;
+
+    if (window.scrollY > 0) {
+      nav.classList.add('scrolling');
+
+      if (window.innerWidth >= 768) {
+        const progress = Math.min(window.scrollY / maxScroll, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+
+        const itemWidth = 176;
+        const minWidth = itemWidth * 3; // Sync with NAV_LINKS length
+        const maxWidth = window.innerWidth * 0.8;
+        const width = maxWidth - (maxWidth - minWidth) * eased;
+
+        nav.style.width = `${width}px`;
+      }
+    } else {
+      nav.classList.remove('scrolling');
+      nav.style.width = '80%';
+    }
+
+    rafId = null;
+  }
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!rafId) rafId = requestAnimationFrame(updateNav);
+    },
+    { passive: true },
+  );
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = link.getAttribute('href')?.slice(1);
+      const target = id && document.getElementById(id);
+      if (target instanceof HTMLElement) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('nav a[href^="#"]');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          links.forEach((l) => l.classList.remove('active'));
+          const id = entry.target.id;
+          document
+            .querySelector(`nav a[href="#${id}"]`)
+            ?.classList.add('active');
+        });
+      },
+      { threshold: 0.6 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  });
+</script>

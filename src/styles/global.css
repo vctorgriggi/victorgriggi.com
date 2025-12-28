@@ -1,0 +1,84 @@
+/* Importing Montserrat font from CDN */
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+
+@import 'tailwindcss';
+
+@theme inline {
+  /* Font Families */
+  --font-sans: 'Montserrat', -apple-system, system-ui, sans-serif;
+
+  /* Colors */
+  --color-background: var(--background);
+  --color-text: var(--white);
+  --color-primary: var(--primary);
+
+  /* UI Elements */
+  --color-border-subtle: var(--border-subtle);
+  --color-card: var(--card-bg);
+}
+
+:root {
+  --background: #101010;
+  --primary: #00a2dd;
+  --white: #dfdfdf;
+  --white-icon: oklch(96.416% 0.00011 271.152 / 0.596);
+  --white-icon-tr: oklch(96.416% 0.00011 271.152 / 0.063);
+  --input-bg: oklch(19.125% 0.00002 271.152 / 0.6);
+  --border-subtle: #ffffff10;
+  --card-bg: #1414149c;
+}
+
+*::selection {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+/* Scrollbar styles for WebKit browsers */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  /* background: var(--container); */
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background);
+  border-radius: 10px;
+}
+
+/* ::-webkit-scrollbar-thumb:hover {
+  background: var(--pink);
+} */
+
+/* Scrollbar styles for Firefox */
+* {
+  scrollbar-width: thin;
+  /* scrollbar-color: var(--line) var(--container); */
+}
+
+/* Shining */
+.shiny-sec {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 25%,
+    var(--white) 50%,
+    var(--primary) 75%
+  );
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% 50%;
+  }
+  30%,
+  70% {
+    background-position: 0% 50%;
+  }
+}

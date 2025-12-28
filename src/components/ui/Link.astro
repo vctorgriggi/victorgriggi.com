@@ -1,0 +1,24 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  href: string;
+  external?: boolean;
+  class?: string;
+  [key: string]: any;
+}
+
+const { href, external, class: className, ...rest } = Astro.props;
+---
+
+<a
+  href={href}
+  target={external ? '_blank' : '_self'}
+  class={cn(
+    'rounded-full border border-(--white-icon-tr) bg-card p-3 text-(--white-icon) transition duration-300 ease-in-out hover:scale-105 hover:bg-(--white-icon-tr) hover:text-text text-center',
+    className,
+  )}
+  {...rest}
+>
+  <slot />
+</a>

@@ -11,9 +11,9 @@ Built to present selected projects, working process, and pricing formats with a 
 ## 🧰 Tech Stack
 
 - Astro
+- React
 - TypeScript
 - Tailwind CSS
-- Vanilla JavaScript
 
 ---
 
@@ -21,11 +21,22 @@ Built to present selected projects, working process, and pricing formats with a 
 
 ```
 src/
-├── components/    # Reusable UI components
-├── layouts/       # Page and section layouts
-├── pages/         # Application routes
-├── styles/        # Global styles and Tailwind config
-└── lib/           # Utilities and helpers
+├── assets/         # Static assets (icons, images)
+├── components/
+│   ├── layout/     # Header, Footer, Nav, Head
+│   ├── react/      # Interactive React components
+│   ├── sections/   # Page sections (Hero, Pricing, etc.)
+│   └── ui/         # Reusable UI primitives (Card, Link, Input)
+├── data/
+│   ├── consts.ts   # Site metadata, navigation, social links
+│   ├── content.ts  # Page content (skills, pricing, projects)
+│   └── icons.ts    # Stack icons mapping
+├── layouts/        # Page layouts
+├── lib/            # Utilities (cn helper)
+├── pages/          # Routes
+├── scripts/        # Client-side scripts
+├── styles/         # Global CSS
+└── types.ts        # TypeScript interfaces
 ```
 
 ---

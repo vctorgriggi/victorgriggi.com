@@ -36,6 +36,7 @@ export const ICONS = {
     Palette: 'lucide:palette',
 
     ExternalLink: 'lucide:external-link',
+    Check: 'lucide:check',
   },
 } as const;
 

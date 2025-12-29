@@ -1,5 +1,7 @@
 ---
 import Section from '@/components/ui/Section.astro';
+import { Icon } from 'astro-icon/components';
+import { ICONS } from '@/data/icons';
 ---
 
 <Section id="contact" subtitle="Vamos Conversar" title="Contato">
@@ -12,7 +14,7 @@ import Section from '@/components/ui/Section.astro';
       <span class="text-text">Brasil (MT)</span>
     </div>
 
-    <div>
+    <div class="relative">
       <form
         id="contact-form"
         action="https://formspree.io/f/xkowbwgn"
@@ -50,11 +52,33 @@ import Section from '@/components/ui/Section.astro';
         >
           Enviar Mensagem
         </button>
-
-        <div id="form-message" class="mt-2 hidden text-sm text-green-400">
-          Mensagem enviada com sucesso. Retornarei em breve.
-        </div>
       </form>
+
+      <!-- Success State -->
+      <div
+        id="success-state"
+        class="flex hidden flex-col items-center justify-center rounded-xl border border-(--white-icon-tr) bg-(--input-bg) px-6 py-16 text-center"
+      >
+        <div
+          class="bg-card text-primary mb-4 rounded-full border border-(--white-icon-tr) p-3 text-center"
+        >
+          <Icon name={ICONS.ui.Check} class="size-5" />
+        </div>
+
+        <h4 class="text-lg font-semibold">Mensagem Enviada</h4>
+
+        <p class="mb-8 text-sm text-(--white-icon)">
+          Obrigado pelo contato! Retornarei assim que possível.
+        </p>
+
+        <button
+          id="back-to-form"
+          type="button"
+          class="border-primary bg-primary w-full rounded-lg border px-4 py-2 text-white transition-opacity hover:opacity-90"
+        >
+          Voltar ao Formulário
+        </button>
+      </div>
     </div>
   </div>
 </Section>

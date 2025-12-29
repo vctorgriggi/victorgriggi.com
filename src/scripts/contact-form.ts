@@ -5,15 +5,19 @@ export function initContactForm(): void {
   const button = document.getElementById(
     'submit-button',
   ) as HTMLButtonElement | null;
-  const message = document.getElementById('form-message') as HTMLElement | null;
+  const successState = document.getElementById(
+    'success-state',
+  ) as HTMLElement | null;
+  const backButton = document.getElementById(
+    'back-to-form',
+  ) as HTMLButtonElement | null;
 
-  if (!form || !button || !message) return;
+  if (!form || !button || !successState || !backButton) return;
 
   form.addEventListener('submit', async (e: SubmitEvent) => {
     e.preventDefault();
 
     button.disabled = true;
-    message.classList.add('hidden');
 
     try {
       const response = await fetch(form.action, {
@@ -24,7 +28,8 @@ export function initContactForm(): void {
 
       if (response.ok) {
         form.reset();
-        message.classList.remove('hidden');
+        form.classList.add('hidden');
+        successState.classList.remove('hidden');
       } else {
         throw new Error();
       }
@@ -34,5 +39,10 @@ export function initContactForm(): void {
     } finally {
       button.disabled = false;
     }
+  });
+
+  backButton.addEventListener('click', () => {
+    successState.classList.add('hidden');
+    form.classList.remove('hidden');
   });
 }

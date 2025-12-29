@@ -1,4 +1,4 @@
-import type { STACK_ICONS } from '@/data/icons';
+import type { StackIconName } from '@/data/icons';
 
 // Site + Navigation
 export interface Site {
@@ -22,11 +22,9 @@ export interface SocialLink {
 }
 
 // Tech Skills + Stack
-export type StackIconKey = keyof typeof STACK_ICONS;
-
 export interface TechSkill {
   name: string;
-  icon: StackIconKey;
+  icon: StackIconName;
 }
 
 export interface SkillCategory {
@@ -38,7 +36,7 @@ export interface SkillCategory {
 export interface StackItem {
   label: string;
   name: string;
-  icon: StackIconKey;
+  icon: StackIconName;
 }
 
 // Projects + Process

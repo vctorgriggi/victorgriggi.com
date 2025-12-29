@@ -3,6 +3,7 @@ import Link from '@/components/ui/Link.astro';
 import Section from '@/components/ui/Section.astro';
 import { PROJECTS } from '@/data/content';
 import { Icon } from 'astro-icon/components';
+import { ICONS } from '@/data/icons';
 ---
 
 <Section id="projects" subtitle="Projetos" title="Destaques">
@@ -43,7 +44,7 @@ import { Icon } from 'astro-icon/components';
                   class="rounded-xl"
                   external
                 >
-                  <Icon name="lucide:github" class="size-5" />
+                  <Icon name={ICONS.ui.GitHub} class="size-5" />
                 </Link>
               )}
 
@@ -54,7 +55,7 @@ import { Icon } from 'astro-icon/components';
                 class="rounded-xl"
                 external
               >
-                <Icon name="lucide:external-link" class="size-5" />
+                <Icon name={ICONS.ui.ExternalLink} class="size-5" />
               </Link>
             </div>
           </div>
@@ -72,7 +73,7 @@ import { Icon } from 'astro-icon/components';
       external
     >
       Ver mais no GitHub
-      <Icon name="lucide:github" class="size-4" />
+      <Icon name={ICONS.ui.GitHub} class="size-4" />
     </Link>
   </div>
 </Section>

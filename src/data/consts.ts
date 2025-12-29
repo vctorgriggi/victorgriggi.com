@@ -1,4 +1,5 @@
 import type { NavLink, SocialLink, Site } from '@/types';
+import { ICONS } from './icons';
 
 // Site metadata
 export const SITE: Site = {
@@ -12,9 +13,9 @@ export const SITE: Site = {
 
 // Navigation links
 export const NAV_LINKS: NavLink[] = [
-  { href: '#hero', label: 'Início', icon: 'lucide:home' },
-  { href: '#manifest', label: 'Manifesto', icon: 'lucide:book-open' },
-  { href: '#pricing', label: 'Colaboração', icon: 'lucide:handshake' },
+  { href: '#hero', label: 'Início', icon: ICONS.ui.Home },
+  { href: '#manifest', label: 'Manifesto', icon: ICONS.ui.BookOpen },
+  { href: '#pricing', label: 'Colaboração', icon: ICONS.ui.Handshake },
 ];
 
 // Social links
@@ -22,16 +23,16 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     href: 'https://github.com/vctorgriggi',
     label: 'GitHub',
-    icon: 'lucide:github',
+    icon: ICONS.ui.GitHub,
   },
   {
     href: 'https://www.linkedin.com/in/victorgriggi/',
     label: 'LinkedIn',
-    icon: 'lucide:linkedin',
+    icon: ICONS.ui.LinkedIn,
   },
   {
     href: 'mailto:contato@victorgriggi.com',
     label: 'Email',
-    icon: 'lucide:mail',
+    icon: ICONS.ui.Mail,
   },
 ];

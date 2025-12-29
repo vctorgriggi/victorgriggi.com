@@ -26,12 +26,13 @@ export function initContactForm(): void {
         form.reset();
         message.classList.remove('hidden');
       } else {
-        throw new Error('Network response was not ok.');
+        throw new Error();
       }
     } catch (error) {
       console.error(error);
-      button.disabled = false;
       alert('Houve um problema ao enviar sua mensagem.');
+    } finally {
+      button.disabled = false;
     }
   });
 }

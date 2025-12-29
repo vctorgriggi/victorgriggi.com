@@ -1,6 +1,6 @@
 ---
 import { TECH_SKILLS } from '@/data/content';
-import { STACK_ICONS } from '@/data/icons';
+import { ICONS } from '@/data/icons';
 ---
 
 <div class="relative overflow-hidden py-8">
@@ -20,7 +20,7 @@ import { STACK_ICONS } from '@/data/icons';
         [...TECH_SKILLS, ...TECH_SKILLS].map((item) => (
           <div class="group flex items-center gap-2">
             <img
-              src={STACK_ICONS[item.icon].src}
+              src={ICONS.stack[item.icon].src}
               alt={item.name}
               class="h-7 w-auto opacity-60 transition-transform duration-300 group-hover:scale-110"
               width="30"

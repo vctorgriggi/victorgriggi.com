@@ -13,10 +13,7 @@ export const TECH_SKILLS: TechSkill[] = [
   { name: 'TypeScript', icon: 'TypeScript' },
   { name: 'Next.js', icon: 'NextJS' },
   { name: 'Astro', icon: 'Astro' },
-  { name: 'Node.js', icon: 'NodeJS' },
-  { name: 'NestJS', icon: 'NestJS' },
-  { name: 'PostgreSQL', icon: 'PostgreSQL' },
-  { name: 'MySQL', icon: 'MySQL' },
+  { name: 'Tailwind CSS', icon: 'Tailwind' },
 ];
 
 // Skill Categories (usado no SkillList.tsx)
@@ -68,20 +65,20 @@ export const PRICING_FORMATS: ProjectFormat[] = [
     name: 'Página Única',
     description:
       'Solução enxuta para apresentar uma ideia, produto ou serviço com foco em um único objetivo.',
-    price: 'A partir de R$ 1.400',
+    price: 'A partir de R$ 900',
     features: [
       'Estrutura focada em conversão',
       'Design e desenvolvimento responsivo',
       'Implementação direta, sem arquitetura complexa',
       'CMS opcional para edição de conteúdo',
     ],
-    note: 'CMS opcional (+R$ 400)',
+    note: 'CMS opcional (+R$ 300)',
   },
   {
     name: 'Website Estruturado',
     description:
       'Projeto completo de presença online, pensado para crescer, organizar conteúdo e sustentar o produto ao longo do tempo.',
-    price: 'A partir de R$ 2.800',
+    price: 'A partir de R$ 2.400',
     featured: true,
     features: [
       'Múltiplas páginas com hierarquia clara',

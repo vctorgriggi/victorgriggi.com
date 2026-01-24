@@ -15,14 +15,14 @@
 }
 
 :root {
-  --background: #101010;
-  --primary: #00a2dd;
-  --white: #dfdfdf;
+  --background: oklch(17.304% 0.00002 271.152);
+  --primary: oklch(67.064% 0.13955 233.562);
+  --white: oklch(90.365% 0.0001 271.152);
   --white-icon: oklch(96.416% 0.00011 271.152 / 0.596);
   --white-icon-tr: oklch(96.416% 0.00011 271.152 / 0.063);
   --input-bg: oklch(19.125% 0.00002 271.152 / 0.6);
-  --border-subtle: #ffffff10;
-  --card-bg: #1414149c;
+  --border-subtle: oklch(100% 0.00011 271.152 / 0.063);
+  --card-bg: oklch(19.125% 0.00002 271.152 / 0.612);
 }
 
 *::selection {
@@ -36,23 +36,23 @@
 }
 
 ::-webkit-scrollbar-track {
-  /* background: var(--container); */
+  background: var(--background);
   border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--background);
+  background: var(--primary);
   border-radius: 10px;
 }
 
-/* ::-webkit-scrollbar-thumb:hover {
-  background: var(--pink);
-} */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
 
 /* Scrollbar styles for Firefox */
 * {
   scrollbar-width: thin;
-  /* scrollbar-color: var(--line) var(--container); */
+  scrollbar-color: var(--primary) var(--background);
 }
 
 /* Shining */

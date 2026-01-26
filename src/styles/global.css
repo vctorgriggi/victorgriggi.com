@@ -4,7 +4,7 @@
   /* Font Families */
   --font-sans: 'Montserrat', -apple-system, system-ui, sans-serif;
 
-  /* Colors */
+  /* Colors Variables */
   --color-background: var(--background);
   --color-text: var(--white);
   --color-primary: var(--primary);

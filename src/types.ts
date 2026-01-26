@@ -14,7 +14,7 @@ export interface NavLink {
   label: string;
   icon: string;
 }
-
+// Social Links
 export interface SocialLink {
   href: string;
   label: string;

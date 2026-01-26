@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import { Code, Smartphone, Palette, ChevronDown } from 'lucide-react';
 import { SKILL_CATEGORIES } from '@/data/content';
 
+// this component runs in react, so we can't use astro icon identifiers
+// lucide icons must be imported as react components and mapped manually
 const ICON_MAP = {
   Code,
   Smartphone,

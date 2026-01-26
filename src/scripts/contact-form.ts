@@ -35,7 +35,7 @@ export function initContactForm(): void {
       }
     } catch (error) {
       console.error(error);
-      alert('Houve um problema ao enviar sua mensagem.');
+      alert('Houve um problema ao enviar sua mensagem!');
     } finally {
       button.disabled = false;
     }

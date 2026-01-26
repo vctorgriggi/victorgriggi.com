@@ -4,6 +4,7 @@ import Section from '@/components/ui/Section.astro';
 import { PROJECTS } from '@/data/content';
 import { Icon } from 'astro-icon/components';
 import { ICONS } from '@/data/icons';
+import { SOCIAL_LINKS } from '@/data/consts';
 ---
 
 <Section id="projects" subtitle="Projetos" title="Destaques">
@@ -66,7 +67,7 @@ import { ICONS } from '@/data/icons';
 
   <div class="mt-10">
     <Link
-      href="https://github.com/vctorgriggi"
+      href={SOCIAL_LINKS[0].href}
       aria-label="GitHub"
       title="GitHub"
       class="inline-flex w-full items-center justify-center gap-1.5"

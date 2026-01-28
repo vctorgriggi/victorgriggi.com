@@ -13,9 +13,9 @@ export const SITE: Site = {
 
 // Navigation links
 export const NAV_LINKS: NavLink[] = [
-  { href: '#hero', label: 'Início', icon: ICONS.ui.Home },
-  { href: '#manifest', label: 'Manifesto', icon: ICONS.ui.BookOpen },
-  { href: '#pricing', label: 'Colaboração', icon: ICONS.ui.Handshake },
+  { href: '#hero', label: 'Início', icon: ICONS.Home },
+  { href: '#manifest', label: 'Manifesto', icon: ICONS.BookOpen },
+  { href: '#pricing', label: 'Colaboração', icon: ICONS.Handshake },
 ];
 
 // Social links
@@ -23,16 +23,16 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     href: 'https://github.com/vctorgriggi',
     label: 'GitHub',
-    icon: ICONS.ui.GitHub,
+    icon: ICONS.GitHub,
   },
   {
     href: 'https://www.linkedin.com/in/victorgriggi/',
     label: 'LinkedIn',
-    icon: ICONS.ui.LinkedIn,
+    icon: ICONS.LinkedIn,
   },
   {
     href: 'mailto:contato@victorgriggi.com',
     label: 'Email',
-    icon: ICONS.ui.Mail,
+    icon: ICONS.Mail,
   },
 ];

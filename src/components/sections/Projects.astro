@@ -1,6 +1,6 @@
 ---
 import Link from '@/components/ui/Link.astro';
-import Section from '@/components/layout/base/Section.astro';
+import Section from '@/components/layout/ui/Section.astro';
 import { PROJECTS } from '@/data/content';
 import { Icon } from 'astro-icon/components';
 import { ICONS } from '@/data/icons';
@@ -45,7 +45,7 @@ import { SOCIAL_LINKS } from '@/data/consts';
                   class="rounded-xl"
                   external
                 >
-                  <Icon name={ICONS.ui.GitHub} class="size-5" />
+                  <Icon name={ICONS.GitHub} class="size-5" />
                 </Link>
               )}
 
@@ -56,7 +56,7 @@ import { SOCIAL_LINKS } from '@/data/consts';
                 class="rounded-xl"
                 external
               >
-                <Icon name={ICONS.ui.ExternalLink} class="size-5" />
+                <Icon name={ICONS.ExternalLink} class="size-5" />
               </Link>
             </div>
           </div>
@@ -74,7 +74,7 @@ import { SOCIAL_LINKS } from '@/data/consts';
       external
     >
       Ver mais no GitHub
-      <Icon name={ICONS.ui.GitHub} class="size-4" />
+      <Icon name={ICONS.GitHub} class="size-4" />
     </Link>
   </div>
 </Section>

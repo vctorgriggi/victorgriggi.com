@@ -1,14 +1,6 @@
 import { useState, useRef } from 'react';
-import { Code, Smartphone, Palette, ChevronDown } from 'lucide-react';
+import { LUCIDE_ICONS } from '@/data/icons';
 import { SKILL_CATEGORIES } from '@/data/content';
-
-// this component runs in react, so we can't use astro icon identifiers
-// lucide icons must be imported as react components and mapped manually
-const ICON_MAP = {
-  Code,
-  Smartphone,
-  Palette,
-} as const;
 
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
@@ -26,9 +18,10 @@ const SkillsList = () => {
 
       <ul className="mt-4 space-y-4 text-lg">
         {SKILL_CATEGORIES.map(({ label, iconName, items }) => {
+          const Icon = LUCIDE_ICONS[iconName];
+          const ChevronIcon = LUCIDE_ICONS.ChevronDown;
           const isOpen = openItem === label;
           const contentHeight = refs.current[label]?.scrollHeight ?? 0;
-          const Icon = ICON_MAP[iconName];
 
           return (
             <li key={label} className="w-full">
@@ -42,7 +35,7 @@ const SkillsList = () => {
                   <div className="flex grow items-center justify-between">
                     <span className="block truncate text-lg">{label}</span>
 
-                    <ChevronDown
+                    <ChevronIcon
                       className={`h-6 w-6 shrink-0 transition-transform ${
                         isOpen ? 'rotate-180' : ''
                       }`}

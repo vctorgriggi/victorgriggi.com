@@ -1,6 +1,6 @@
 ---
 import { TECH_SKILLS } from '@/data/content';
-import { ICONS } from '@/data/icons';
+import { STACK_ICONS } from '@/data/icons';
 ---
 
 <div class="relative overflow-hidden py-8">
@@ -17,21 +17,23 @@ import { ICONS } from '@/data/icons';
   <div class="relative w-full">
     <div class="scroll-track flex gap-12 md:gap-20">
       {
-        [...TECH_SKILLS, ...TECH_SKILLS].map((item) => (
-          <div class="group flex items-center gap-2">
-            <img
-              src={ICONS.stack[item.icon].src}
-              alt={item.name}
-              class="h-7 w-auto opacity-60 transition-transform duration-300 group-hover:scale-110"
-              width="30"
-              height="30"
-              loading="lazy"
-            />
-            <span class="text-lg font-medium text-(--white-icon)">
-              {item.name}
-            </span>
-          </div>
-        ))
+        [...TECH_SKILLS, ...TECH_SKILLS].map((item) => {
+          const Icon = STACK_ICONS[item.icon];
+
+          return (
+            <div class="group flex items-center gap-2">
+              <Icon
+                class="h-7 w-auto opacity-60 transition-transform duration-300 group-hover:scale-110"
+                width="30"
+                height="30"
+                aria-hidden="true"
+              />
+              <span class="text-lg font-medium text-(--white-icon)">
+                {item.name}
+              </span>
+            </div>
+          );
+        })
       }
     </div>
   </div>

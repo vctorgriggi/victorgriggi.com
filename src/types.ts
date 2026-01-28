@@ -1,4 +1,4 @@
-import type { StackIconName } from '@/data/icons';
+import type { LucideIconName, StackIconName } from '@/data/icons';
 
 // Site + Navigation
 export interface Site {
@@ -22,22 +22,22 @@ export interface SocialLink {
 }
 
 // Tech Skills + Stack
-export interface TechSkill {
-  name: string;
-  icon: StackIconName;
-}
-
-export interface SkillCategory {
+export type SkillCategory = {
   label: string;
-  iconName: 'Code' | 'Smartphone' | 'Palette';
+  iconName: LucideIconName;
   items: string[];
-}
+};
 
-export interface StackItem {
+export type TechSkill = {
+  name: string;
+  icon: StackIconName;
+};
+
+export type StackItem = {
   label: string;
   name: string;
   icon: StackIconName;
-}
+};
 
 // Projects + Process
 export interface Project {

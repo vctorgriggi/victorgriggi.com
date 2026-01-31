@@ -62,41 +62,42 @@ export const PROJECTS: Project[] = [
 // Pricing Formats (usado no Pricing.astro)
 export const PRICING_FORMATS: ProjectFormat[] = [
   {
-    name: 'Página Única',
+    name: 'Começo',
     description:
-      'Solução enxuta para apresentar uma ideia, produto ou serviço com foco em um único objetivo.',
+      'Ideal para lançar rápido ou apresentar um serviço com foco total em conversão.',
     price: 'A partir de R$ 900',
     features: [
-      'Estrutura focada em conversão',
+      'Estrutura direta, pensada para um único objetivo',
       'Design e desenvolvimento responsivo',
-      'Implementação direta, sem arquitetura complexa',
-      'CMS opcional para edição de conteúdo',
+      'Entrega rápida (até 7 dias)',
+      'Código limpo, sem complexidade desnecessária',
     ],
     note: 'CMS opcional (+R$ 300)',
   },
   {
-    name: 'Website Estruturado',
+    name: 'Base',
     description:
-      'Projeto completo de presença online, pensado para crescer, organizar conteúdo e sustentar o produto ao longo do tempo.',
+      'Para projetos que precisam crescer com organização desde o início.',
     price: 'A partir de R$ 2.400',
     featured: true,
     features: [
-      'Múltiplas páginas com hierarquia clara',
-      'Arquitetura de navegação e conteúdo',
-      'CMS incluso para gerenciamento',
-      'Base preparada para evoluções futuras',
+      'Estrutura pensada para múltiplos conteúdos e seções',
+      'Arquitetura de navegação clara e escalável',
+      'CMS incluso para autonomia na gestão',
+      'Base sólida para evoluções futuras sem retrabalho',
     ],
+    note: 'Escopo ajustado conforme complexidade e volume de conteúdo',
   },
   {
-    name: 'Projeto Sob Medida',
+    name: 'Sistema',
     description:
-      'Quando o problema exige decisões técnicas e estruturais fora de formatos pré-definidos.',
+      'Quando o site deixa de ser apenas apresentação e passa a ter lógica própria.',
     price: 'Valor sob consulta',
     features: [
-      'Escopo definido em conjunto',
-      'Arquitetura personalizada',
-      'Integrações e soluções específicas',
-      'Foco em performance e manutenção',
+      'Escopo e objetivos definidos em conjunto',
+      'Arquitetura técnica personalizada',
+      'Integrações específicas e regras de negócio',
+      'Foco em performance, manutenção e escalabilidade',
     ],
   },
 ];
